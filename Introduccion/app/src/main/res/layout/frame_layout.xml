@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:src="@drawable/img"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/image_description"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalles del lugar"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                />
+
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit ac dui accumsan dictum. Mauris elementum interdum ex. Donec in mollis turpis. Aenean eleifend justo nec congue volutpat. Ut scelerisque, sapien vitae interdum consectetur, massa nibh fringilla tortor, sed faucibus nisl diam in ligula. Duis odio tortor, hendrerit vitae lacus in, eleifend blandit ex. Donec rutrum faucibus dolor, ac lacinia nisi venenatis ut. Nulla cursus mi aliquet faucibus dictum. Fusce eros quam, bibendum in sem et, cursus fringilla turpis. Proin pretium augue felis, sed consectetur nulla semper vitae. Vivamus egestas tortor ut justo mollis, sed sollicitudin felis ullamcorper. Duis tincidunt lacinia quam eget laoreet. Vivamus vitae scelerisque dui, eu elementum odio."
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit ac dui accumsan dictum. Mauris elementum interdum ex. Donec in mollis turpis. Aenean eleifend justo nec congue volutpat. Ut scelerisque, sapien vitae interdum consectetur, massa nibh fringilla tortor, sed faucibus nisl diam in ligula. Duis odio tortor, hendrerit vitae lacus in, eleifend blandit ex. Donec rutrum faucibus dolor, ac lacinia nisi venenatis ut. Nulla cursus mi aliquet faucibus dictum. Fusce eros quam, bibendum in sem et, cursus fringilla turpis. Proin pretium augue felis, sed consectetur nulla semper vitae. Vivamus egestas tortor ut justo mollis, sed sollicitudin felis ullamcorper. Duis tincidunt lacinia quam eget laoreet. Vivamus vitae scelerisque dui, eu elementum odio." />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit ac dui accumsan dictum. Mauris elementum interdum ex. Donec in mollis turpis. Aenean eleifend justo nec congue volutpat. Ut scelerisque, sapien vitae interdum consectetur, massa nibh fringilla tortor, sed faucibus nisl diam in ligula. Duis odio tortor, hendrerit vitae lacus in, eleifend blandit ex. Donec rutrum faucibus dolor, ac lacinia nisi venenatis ut. Nulla cursus mi aliquet faucibus dictum. Fusce eros quam, bibendum in sem et, cursus fringilla turpis. Proin pretium augue felis, sed consectetur nulla semper vitae. Vivamus egestas tortor ut justo mollis, sed sollicitudin felis ullamcorper. Duis tincidunt lacinia quam eget laoreet. Vivamus vitae scelerisque dui, eu elementum odio."
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit ac dui accumsan dictum. Mauris elementum interdum ex. Donec in mollis turpis. Aenean eleifend justo nec congue volutpat. Ut scelerisque, sapien vitae interdum consectetur, massa nibh fringilla tortor, sed faucibus nisl diam in ligula. Duis odio tortor, hendrerit vitae lacus in, eleifend blandit ex. Donec rutrum faucibus dolor, ac lacinia nisi venenatis ut. Nulla cursus mi aliquet faucibus dictum. Fusce eros quam, bibendum in sem et, cursus fringilla turpis. Proin pretium augue felis, sed consectetur nulla semper vitae. Vivamus egestas tortor ut justo mollis, sed sollicitudin felis ullamcorper. Duis tincidunt lacinia quam eget laoreet. Vivamus vitae scelerisque dui, eu elementum odio."
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut elit ac dui accumsan dictum. Mauris elementum interdum ex. Donec in mollis turpis. Aenean eleifend justo nec congue volutpat. Ut scelerisque, sapien vitae interdum consectetur, massa nibh fringilla tortor, sed faucibus nisl diam in ligula. Duis odio tortor, hendrerit vitae lacus in, eleifend blandit ex. Donec rutrum faucibus dolor, ac lacinia nisi venenatis ut. Nulla cursus mi aliquet faucibus dictum. Fusce eros quam, bibendum in sem et, cursus fringilla turpis. Proin pretium augue felis, sed consectetur nulla semper vitae. Vivamus egestas tortor ut justo mollis, sed sollicitudin felis ullamcorper. Duis tincidunt lacinia quam eget laoreet. Vivamus vitae scelerisque dui, eu elementum odio."
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

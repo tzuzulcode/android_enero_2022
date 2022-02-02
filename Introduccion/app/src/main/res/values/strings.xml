@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Introduccion</string>
+    <string name="hola_mundo">Hola. mundo!</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="no_option">Ninguna opción seleccionada</string>
+    <string name="vinicio">Vinicio</string>
+    <string name="password">Password...</string>
+    <string name="to">To:</string>
+    <string name="message">Message:</string>
+    <string name="send">Send</string>
+    <string name="image_description">Imagen de montaña</string>
+    <string-array name="options">
+        <item>@string/vinicio</item>
+        <item>Federico</item>
+        <item>Valentina</item>
+        <item>Rony</item>
+    </string-array>
+</resources>
