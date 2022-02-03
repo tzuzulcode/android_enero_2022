@@ -31,5 +31,14 @@
         <action
             android:id="@+id/action_detailsFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="profession"
+            app:argType="string" />
+        <argument
+            android:name="age"
+            app:argType="integer" />
     </fragment>
 </navigation>
