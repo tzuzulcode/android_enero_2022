@@ -49,4 +49,9 @@
             android:name="age"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.tzuzulcode.fragmentnavigation.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
 </navigation>
