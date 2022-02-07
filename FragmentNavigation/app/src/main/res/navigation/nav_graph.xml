@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_formFragment"
-            app:destination="@id/formFragment" />
+            app:destination="@id/formFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/formFragment"
@@ -21,7 +23,10 @@
         tools:layout="@layout/fragment_form" >
         <action
             android:id="@+id/action_formFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcomeFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
@@ -30,7 +35,10 @@
         tools:layout="@layout/fragment_details" >
         <action
             android:id="@+id/action_detailsFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/welcomeFragment" />
         <argument
             android:name="name"
             app:argType="string" />

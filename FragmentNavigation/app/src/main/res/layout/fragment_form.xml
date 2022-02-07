@@ -28,7 +28,8 @@
             android:ems="10"
             android:inputType="text"
             android:layout_marginBottom="10dp"
-            android:text="Name" />
+            android:hint="Name..."
+            />
 
         <EditText
             android:id="@+id/profession"
@@ -37,7 +38,8 @@
             android:ems="10"
             android:inputType="text"
             android:layout_marginBottom="10dp"
-            android:text="Name" />
+            android:hint="Profession..."
+           />
 
         <EditText
             android:id="@+id/age"
@@ -46,6 +48,7 @@
             android:ems="10"
             android:inputType="number"
             android:layout_marginBottom="10dp"
+            android:hint="Age..."
             />
         <Button
             android:layout_width="wrap_content"
