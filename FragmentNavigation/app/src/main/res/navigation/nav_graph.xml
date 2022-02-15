@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.tzuzulcode.fragmentnavigation.WelcomeFragment"
-        android:label="fragment_welcome"
+        android:label="Welcome"
         tools:layout="@layout/fragment_welcome" >
         <action
             android:id="@+id/action_welcomeFragment_to_formFragment"
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/formFragment"
         android:name="com.tzuzulcode.fragmentnavigation.FormFragment"
-        android:label="fragment_form"
+        android:label="Form"
         tools:layout="@layout/fragment_form" >
         <action
             android:id="@+id/action_formFragment_to_detailsFragment"
@@ -31,7 +31,7 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.tzuzulcode.fragmentnavigation.DetailsFragment"
-        android:label="fragment_details"
+        android:label="Details"
         tools:layout="@layout/fragment_details" >
         <action
             android:id="@+id/action_detailsFragment_to_welcomeFragment"
@@ -52,6 +52,16 @@
     <fragment
         android:id="@+id/helpFragment"
         android:name="com.tzuzulcode.fragmentnavigation.HelpFragment"
-        android:label="fragment_help"
+        android:label="Help"
         tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.tzuzulcode.fragmentnavigation.QuestionsFragment"
+        android:label="fragment_questions"
+        tools:layout="@layout/fragment_questions" />
+    <fragment
+        android:id="@+id/reportsFragment"
+        android:name="com.tzuzulcode.fragmentnavigation.ReportsFragment"
+        android:label="fragment_reports"
+        tools:layout="@layout/fragment_reports" />
 </navigation>

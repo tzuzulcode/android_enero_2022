@@ -46,4 +46,10 @@
         app:defaultNavHost="true"
         app:navGraph="@navigation/nav_graph"
         />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottom_nav"
+        app:menu="@menu/menu_help"
+        />
 </LinearLayout>

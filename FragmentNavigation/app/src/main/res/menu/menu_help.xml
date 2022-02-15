@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/helpFragment"
+        android:title="Help"
+        android:icon="@android:drawable/ic_menu_help"
+        />
+    <item
+        android:id="@+id/questionsFragment"
+        android:title="Questions"
+        android:icon="@android:drawable/ic_menu_help"
+        />
+    <item
+        android:id="@+id/reportsFragment"
+        android:title="Reports"
+        android:icon="@android:drawable/ic_menu_info_details"
+        />
+</menu>
