@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/questionsFragment"
+            android:title="Questions"
+            android:icon="@android:drawable/ic_menu_help"
+            />
+        <item
+            android:id="@+id/reportsFragment"
+            android:title="Reports"
+            android:icon="@android:drawable/ic_menu_info_details"
+            />
+    </group>
+    <item android:title="Support">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/helpFragment"
+                    android:title="Help"
+                    android:icon="@android:drawable/ic_menu_help"
+                    />
+            </group>
+        </menu>
+    </item>
+</menu>
