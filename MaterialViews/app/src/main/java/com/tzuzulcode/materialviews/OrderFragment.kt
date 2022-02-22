@@ -5,10 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.chip.Chip
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 
 class OrderFragment : Fragment() {
     override fun onCreateView(
@@ -34,6 +36,45 @@ class OrderFragment : Fragment() {
 
         lista.adapter = adapter
 
+        // Reaccionando a la interacción
+
+        val fab = view.findViewById<FloatingActionButton>(R.id.button_send)
+        val food = view.findViewById<RadioGroup>(R.id.food)
+        val queso = view.findViewById<CheckBox>(R.id.queso)
+        val entrega = view.findViewById<Switch>(R.id.entrega_rapida)
+        val picante = view.findViewById<ToggleButton>(R.id.picante)
+        val paraLlevar = view.findViewById<Chip>(R.id.para_llevar)
+        val soloRestaurante = view.findViewById<Chip>(R.id.solo_restaurante)
+
+
+        fab.setOnClickListener{
+            val foodType = food.checkedRadioButtonId
+            if(foodType==-1){
+                Toast.makeText(activity,"Ninguna comida seleccionada",Toast.LENGTH_SHORT).show()
+            }else{
+                var text = (when(foodType){
+                    R.id.spaguetti -> "Spaguetti"
+                    R.id.hamburhuesa -> "Hamburguesa"
+                    R.id.arepa -> "Arepa"
+                    else -> "Tacos"
+                })
+
+                var message = "Comida: $text. Queso: ${queso.isChecked}." +
+                        " Entrega: ${entrega.isChecked}. Picante: ${picante.isChecked}"
+
+                if(paraLlevar.isChecked){
+                    message += " Para llevar"
+                }else{
+                    message += " Para restaurante"
+                }
+
+                Snackbar.make(fab,message,Snackbar.LENGTH_LONG).show()
+
+            }
+        }
+
         return view
+
+        //Binding
     }
 }

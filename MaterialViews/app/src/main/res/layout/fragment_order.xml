@@ -12,6 +12,7 @@
         android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar"
         >
         <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -68,6 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:padding="30dp"
 
             >
 
@@ -81,27 +83,33 @@
 
             <RadioGroup
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/food"
+                >
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Spaguetti"
+                    android:id="@+id/spaguetti"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Hamburguesa"
+                    android:id="@+id/hamburhuesa"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Arepa"
+                    android:id="@+id/arepa"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Tacos"
+                    android:id="@+id/tacos"
                     />
             </RadioGroup>
 
@@ -109,25 +117,64 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Queso?"
+                android:id="@+id/queso"
                 />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Entrega rapida?"
+                />
             <Switch
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/entrega_rapida"
                 />
+
+
 
             <ToggleButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textOn="Encendido"
-                android:textOff="Apagado"
-            />
+                android:textOn="Picante"
+                android:textOff="Sin picante"
+                android:id="@+id/picante"
+                />
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Para llevar"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/para_llevar"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Solo restaurante"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:id="@+id/solo_restaurante"
+                    />
+            </com.google.android.material.chip.ChipGroup>
 
 
         </LinearLayout>
 
 
     </androidx.core.widget.NestedScrollView>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@id/collapsing_toolbar"
+        app:layout_anchorGravity="bottom|end"
+        android:src="@android:drawable/ic_menu_send"
+        android:layout_margin="15dp"
+        android:id="@+id/button_send"
+        />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
