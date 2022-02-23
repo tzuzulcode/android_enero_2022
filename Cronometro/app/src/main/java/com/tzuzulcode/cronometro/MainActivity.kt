@@ -3,10 +3,12 @@ package com.tzuzulcode.cronometro
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
-import android.widget.Button
 import android.widget.Chronometer
+import com.tzuzulcode.cronometro.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding:ActivityMainBinding
 
     lateinit var stopwatch: Chronometer
     var running = false
@@ -19,7 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        //setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
+
 
         stopwatch = findViewById(R.id.stopwatch)
 
@@ -35,11 +41,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val startButton = findViewById<Button>(R.id.start_button)
-        val pauseButton = findViewById<Button>(R.id.pause_button)
-        val resetButton = findViewById<Button>(R.id.reset_button)
+        //val startButton = findViewById<Button>(R.id.start_button)
+        //val pauseButton = findViewById<Button>(R.id.pause_button)
+        //val resetButton = findViewById<Button>(R.id.reset_button)
 
-        startButton.setOnClickListener {
+        binding.startButton.setOnClickListener {
             if(!running){
                 setBaseTime()
                 stopwatch.start()
@@ -47,7 +53,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        pauseButton.setOnClickListener {
+        binding.pauseButton.setOnClickListener {
             if(running){
                 saveOffset()
                 stopwatch.stop()
@@ -55,7 +61,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        resetButton.setOnClickListener {
+        binding.resetButton.setOnClickListener {
             offset = 0
             setBaseTime()
         }

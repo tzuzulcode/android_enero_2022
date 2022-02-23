@@ -11,14 +11,22 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.chip.Chip
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
+import com.tzuzulcode.materialviews.databinding.FragmentOrderBinding
 
 class OrderFragment : Fragment() {
+    //Backing property
+    private var _binding: FragmentOrderBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_order, container, false)
+        //val view = inflater.inflate(R.layout.fragment_order, container, false)
+        _binding = FragmentOrderBinding.inflate(inflater,container,false)
+
+        val view = binding.root
 
         val toolbar = view.findViewById<MaterialToolbar>(R.id.toolbar)
 
@@ -39,16 +47,23 @@ class OrderFragment : Fragment() {
         // Reaccionando a la interacción
 
         val fab = view.findViewById<FloatingActionButton>(R.id.button_send)
-        val food = view.findViewById<RadioGroup>(R.id.food)
+
+        /*binding.sendButton.setOnClickListener{
+
+        }*/
+
+        /*val food = view.findViewById<RadioGroup>(R.id.food)
         val queso = view.findViewById<CheckBox>(R.id.queso)
         val entrega = view.findViewById<Switch>(R.id.entrega_rapida)
         val picante = view.findViewById<ToggleButton>(R.id.picante)
         val paraLlevar = view.findViewById<Chip>(R.id.para_llevar)
         val soloRestaurante = view.findViewById<Chip>(R.id.solo_restaurante)
 
+         */
 
-        fab.setOnClickListener{
-            val foodType = food.checkedRadioButtonId
+
+        binding.buttonSend.setOnClickListener{
+            val foodType = binding.food.checkedRadioButtonId
             if(foodType==-1){
                 Toast.makeText(activity,"Ninguna comida seleccionada",Toast.LENGTH_SHORT).show()
             }else{
@@ -59,10 +74,10 @@ class OrderFragment : Fragment() {
                     else -> "Tacos"
                 })
 
-                var message = "Comida: $text. Queso: ${queso.isChecked}." +
-                        " Entrega: ${entrega.isChecked}. Picante: ${picante.isChecked}"
+                var message = "Comida: $text. Queso: ${binding.queso.isChecked}." +
+                        " Entrega: ${binding.entregaRapida.isChecked}. Picante: ${binding.picante.isChecked}"
 
-                if(paraLlevar.isChecked){
+                if(binding.paraLlevar.isChecked){
                     message += " Para llevar"
                 }else{
                     message += " Para restaurante"
@@ -73,8 +88,13 @@ class OrderFragment : Fragment() {
             }
         }
 
-        return view
 
-        //Binding
+
+        return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
