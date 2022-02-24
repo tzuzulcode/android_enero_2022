@@ -16,7 +16,7 @@ import com.tzuzulcode.materialviews.databinding.FragmentOrderBinding
 class OrderFragment : Fragment() {
     //Backing property
     private var _binding: FragmentOrderBinding? = null
-    private val binding get() = _binding!!
+    private val binding get() = _binding!! //Si _binding es null, se lanza un null pointer exception
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,13 +28,13 @@ class OrderFragment : Fragment() {
 
         val view = binding.root
 
-        val toolbar = view.findViewById<MaterialToolbar>(R.id.toolbar)
+        val toolbar = binding.toolbar
 
         val thisActivity = activity as AppCompatActivity
 
         thisActivity.setSupportActionBar(toolbar)
 
-        val lista = view.findViewById<ListView>(R.id.list_view)
+        val lista = binding.listView
 
         val listaAlumnos = arrayListOf<Person>(Person("Edgar",24,"Bogota"),Person("Federico",22,"Florida"))
 
@@ -46,7 +46,7 @@ class OrderFragment : Fragment() {
 
         // Reaccionando a la interacción
 
-        val fab = view.findViewById<FloatingActionButton>(R.id.button_send)
+        //val fab = view.findViewById<FloatingActionButton>(R.id.button_send)
 
         /*binding.sendButton.setOnClickListener{
 
@@ -83,7 +83,7 @@ class OrderFragment : Fragment() {
                     message += " Para restaurante"
                 }
 
-                Snackbar.make(fab,message,Snackbar.LENGTH_LONG).show()
+                Snackbar.make(binding.buttonSend,message,Snackbar.LENGTH_LONG).show()
 
             }
         }
