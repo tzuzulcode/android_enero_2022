@@ -51,14 +51,6 @@ class GameFragment : Fragment() {
         return view
     }
 
-    /*fun checkLetter(str:String):String{
-        return if(correctGuesses.contains(str)){
-            str
-        }else{
-            "_"
-        }
-    }*/
-
     fun updateScreen(){
         binding.word.text = viewModel.displaySecretWord
         binding.lives.text = "Tiene ${viewModel.livesLeft} vidas restantes"

@@ -15,6 +15,14 @@ class GameViewModel: ViewModel() {
         displaySecretWord = getSecretWordDisplay()
     }
 
+    /*fun checkLetter(str:String):String{
+        return if(correctGuesses.contains(str)){
+            str
+        }else{
+            "_"
+        }
+    }*/
+
     fun checkLetter(str:String) = when(correctGuesses.contains(str)){
         true->str
         false->"_"
@@ -62,6 +70,9 @@ class GameViewModel: ViewModel() {
         return message
     }
 
+    /*override fun onCleared() {
+        super.onCleared()
+    }*/
 
 
 }
