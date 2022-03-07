@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.tzuzulcode.ahorcado.databinding.FragmentGameBinding
@@ -28,15 +29,23 @@ class GameFragment : Fragment() {
         //:: indica que obtenemos una referencia a la clase y no al objeto
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
-        updateScreen()
+        //updateScreen()
+
+        viewModel.incorrectGuesses.observe(viewLifecycleOwner, Observer { newValue->
+            binding.incorrectGuesses.text =  "Letras incorrectas: ${newValue}"
+        })
+        viewModel.livesLeft.observe(viewLifecycleOwner, Observer {
+            binding.lives.text = "Tiene ${it} vidas restantes"
+        })
+        viewModel.displaySecretWord.observe(viewLifecycleOwner, Observer {
+            binding.word.text = it
+        })
 
 
         binding.guessButton.setOnClickListener {
             viewModel.makeGuess(binding.guess.text.toString().uppercase())
             //Vaciamos el EditText
             binding.guess.text = null
-
-            updateScreen()
 
             if(viewModel.isWon() || viewModel.isLost()){
                 val action = GameFragmentDirections.actionGameFragmentToResultFragment(viewModel.getFinalMessage())
@@ -47,15 +56,14 @@ class GameFragment : Fragment() {
         }
 
 
-
         return view
     }
 
-    fun updateScreen(){
+    /*fun updateScreen(){
         binding.word.text = viewModel.displaySecretWord
         binding.lives.text = "Tiene ${viewModel.livesLeft} vidas restantes"
         binding.incorrectGuesses.text = "Letras incorrectas: ${viewModel.incorrectGuesses}"
-    }
+    }*/
 
     override fun onDestroyView() {
         super.onDestroyView()
