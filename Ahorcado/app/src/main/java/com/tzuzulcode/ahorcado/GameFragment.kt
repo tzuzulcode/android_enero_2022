@@ -29,9 +29,12 @@ class GameFragment : Fragment() {
         //:: indica que obtenemos una referencia a la clase y no al objeto
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
 
+        binding.gameViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
         //updateScreen()
 
-        viewModel.incorrectGuesses.observe(viewLifecycleOwner, Observer { newValue->
+        /*viewModel.incorrectGuesses.observe(viewLifecycleOwner, Observer { newValue->
             binding.incorrectGuesses.text =  "Letras incorrectas: ${newValue}"
         })
         viewModel.livesLeft.observe(viewLifecycleOwner, Observer {
@@ -39,7 +42,7 @@ class GameFragment : Fragment() {
         })
         viewModel.displaySecretWord.observe(viewLifecycleOwner, Observer {
             binding.word.text = it
-        })
+        })*/
 
 
         binding.guessButton.setOnClickListener {

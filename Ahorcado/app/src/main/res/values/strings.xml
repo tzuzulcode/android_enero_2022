@@ -3,4 +3,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="jugar_de_nuevo">Jugar de nuevo</string>
+    <string name="example">Hola, mi nombre es %s</string>
+    <string name="example2">Hola, mi edad es %d</string>
+    <!-- Un ejemplo con multiples arguments: -->
+    <string name="example3">Hola, mi nombre es %1$s. Tengo %2$d años</string>
+
+    <string name="lives_left">Tiene %d vidas restantes</string>
+    <string name="incorrect_guesses">Letras incorrectas: %s</string>
 </resources>

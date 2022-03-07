@@ -30,7 +30,7 @@ class ResultFragment : Fragment() {
         viewModelFactory = ResultViewModelFactory(result)
         viewModel = ViewModelProvider(this,viewModelFactory).get(ResultViewModel::class.java)
 
-        binding.result.text = viewModel.result
+        binding.resultViewModel = viewModel
 
         binding.newGame.setOnClickListener {
             view.findNavController().navigate(R.id.action_resultFragment_to_gameFragment)

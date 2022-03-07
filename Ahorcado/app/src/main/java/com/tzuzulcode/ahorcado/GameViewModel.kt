@@ -24,6 +24,10 @@ class GameViewModel: ViewModel() {
     val displaySecretWord:LiveData<String>
         get() = _displaySecretWord
 
+    private val _gameOver = MutableLiveData(false)
+    val gameOver:LiveData<Boolean>
+        get() = _gameOver
+
     init{
         _displaySecretWord.value = getSecretWordDisplay()
     }
@@ -60,6 +64,7 @@ class GameViewModel: ViewModel() {
                 _incorrectGuesses.value += "$guess "
                 _livesLeft.value = _livesLeft.value?.minus(1)
             }
+            if(isWon() || isLost()) _gameOver.value = true
         }
     }
 
@@ -81,6 +86,10 @@ class GameViewModel: ViewModel() {
         message+=" La palabra era: $secretWord"
 
         return message
+    }
+
+    fun finishGame(){
+        _gameOver.value = true
     }
 
     /*override fun onCleared() {
