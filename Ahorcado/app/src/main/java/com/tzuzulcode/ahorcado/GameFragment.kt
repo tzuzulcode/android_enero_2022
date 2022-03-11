@@ -24,6 +24,7 @@ class GameFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGameBinding.inflate(inflater, container, false)
+        //DataBindingUtil.inflate(inflater, R.layout.game_fragment, container, false)
         val view = binding.root
 
         //:: indica que obtenemos una referencia a la clase y no al objeto
@@ -44,18 +45,19 @@ class GameFragment : Fragment() {
             binding.word.text = it
         })*/
 
+        viewModel.gameOver.observe(viewLifecycleOwner, Observer { gameOver ->
+            if(gameOver) {
+                val action =
+                    GameFragmentDirections.actionGameFragmentToResultFragment(viewModel.getFinalMessage())
+                view.findNavController().navigate(action)
+            }
+        })
+
 
         binding.guessButton.setOnClickListener {
             viewModel.makeGuess(binding.guess.text.toString().uppercase())
             //Vaciamos el EditText
             binding.guess.text = null
-
-            if(viewModel.isWon() || viewModel.isLost()){
-                val action = GameFragmentDirections.actionGameFragmentToResultFragment(viewModel.getFinalMessage())
-
-                view.findNavController().navigate(action)
-            }
-
         }
 
 
