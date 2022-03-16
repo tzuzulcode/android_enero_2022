@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".TasksFragment">
     <data>
-
+        <variable
+            name="viewModel"
+            type="com.tzuzulcode.tasksapp.TasksViewModel" />
     </data>
 
     <LinearLayout
@@ -17,6 +19,7 @@
            android:id="@+id/task_name"
            android:inputType="text"
            android:hint="@string/enter_task"
+           android:text="@={viewModel.newTask}"
            />
 
         <Button
@@ -24,11 +27,13 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="@string/save_task"
+            android:onClick="@{()->viewModel.addTask()}"
             />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tasks"
+            android:text="@{viewModel.tasksString}"
             />
 
     </LinearLayout>

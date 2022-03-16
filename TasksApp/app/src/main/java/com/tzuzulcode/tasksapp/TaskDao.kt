@@ -1,24 +1,25 @@
 package com.tzuzulcode.tasksapp
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
 interface TaskDao {
     @Insert
-    fun insert(task: Task)
+    suspend fun insert(task: Task)
 
     @Insert
-    fun insertAll(tasks:List<Task>)
+    suspend fun insertAll(tasks:List<Task>)
 
     @Update
-    fun update(task: Task)
+    suspend fun update(task: Task)
 
     @Delete
-    fun delete(task: Task)
+    suspend fun delete(task: Task)
 
     @Query("SELECT * FROM tasks WHERE id= :taskId")
-    fun get(taskId:Long)
+    fun get(taskId:Long):LiveData<Task>
 
     @Query("SELECT * FROM tasks")
-    fun getAll()
+    fun getAll():LiveData<List<Task>>
 
 }
