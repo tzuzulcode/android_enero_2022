@@ -1,8 +1,6 @@
 package com.tzuzulcode.tasksapp
 
-import androidx.lifecycle.Transformations
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 
 class TasksViewModel(val dao: TaskDao):ViewModel() {
@@ -14,6 +12,10 @@ class TasksViewModel(val dao: TaskDao):ViewModel() {
             tasks->formatTasks(tasks)
     }*/
 
+    private val _navigateToTask = MutableLiveData<Long?>()
+    val navigateToTask:LiveData<Long?>
+        get() = _navigateToTask
+
     fun addTask(){
         print("Agregando task")
         viewModelScope.launch {
@@ -21,6 +23,14 @@ class TasksViewModel(val dao: TaskDao):ViewModel() {
             task.name = newTask
             dao.insert(task)
         }
+    }
+
+    fun onTaskClicked(taskId:Long){
+        _navigateToTask.value = taskId
+    }
+
+    fun onTaskNavigated(){
+        _navigateToTask.value = null
     }
 
     /*fun formatTasks(tasks:List<Task>):String{
