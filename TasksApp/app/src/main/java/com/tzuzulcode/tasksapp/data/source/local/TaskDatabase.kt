@@ -1,11 +1,14 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.data.source.local
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.tzuzulcode.tasksapp.models.Step
+import com.tzuzulcode.tasksapp.models.Task
+import com.tzuzulcode.tasksapp.models.TaskWithSteps
 
-@Database(entities = [Task::class], version = 2, exportSchema = false)
+@Database(entities = [Task::class,Step::class], version = 3, exportSchema = false)
 abstract class TaskDatabase: RoomDatabase() {
     abstract val taskDao: TaskDao
 
@@ -16,7 +19,7 @@ abstract class TaskDatabase: RoomDatabase() {
         private var INSTANCE: TaskDatabase? = null
 
         //Singleton: Design pattern
-        fun getInstance(context: Context):TaskDatabase{
+        fun getInstance(context: Context): TaskDatabase {
             var instance = INSTANCE
             if(instance==null){
                 instance = Room.databaseBuilder(

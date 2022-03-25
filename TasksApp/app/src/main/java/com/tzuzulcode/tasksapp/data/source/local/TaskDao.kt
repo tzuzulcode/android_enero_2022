@@ -1,6 +1,8 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.data.source.local
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.tzuzulcode.tasksapp.models.Task
+import com.tzuzulcode.tasksapp.models.TaskWithSteps
 
 @Dao
 interface TaskDao {
@@ -21,5 +23,8 @@ interface TaskDao {
 
     @Query("SELECT * FROM tasks")
     fun getAll():LiveData<List<Task>>
+
+    @Query("SELECT * FROM tasks WHERE id= :taskId")
+    fun getTaskWithSteps(taskId:Long):LiveData<TaskWithSteps>
 
 }

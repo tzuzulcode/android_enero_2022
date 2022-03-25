@@ -1,4 +1,4 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

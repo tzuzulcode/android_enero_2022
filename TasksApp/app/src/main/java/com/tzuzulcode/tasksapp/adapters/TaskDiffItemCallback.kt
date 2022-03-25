@@ -1,6 +1,7 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.adapters
 
 import androidx.recyclerview.widget.DiffUtil
+import com.tzuzulcode.tasksapp.models.Task
 
 class TaskDiffItemCallback:DiffUtil.ItemCallback<Task>() {
     /*override fun areItemsTheSame(oldItem: Task, newItem: Task): Boolean {

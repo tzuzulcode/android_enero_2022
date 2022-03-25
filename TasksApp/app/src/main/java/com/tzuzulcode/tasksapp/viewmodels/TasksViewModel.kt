@@ -1,6 +1,8 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.viewmodels
 
 import androidx.lifecycle.*
+import com.tzuzulcode.tasksapp.data.source.local.TaskDao
+import com.tzuzulcode.tasksapp.models.Task
 import kotlinx.coroutines.launch
 
 class TasksViewModel(val dao: TaskDao):ViewModel() {

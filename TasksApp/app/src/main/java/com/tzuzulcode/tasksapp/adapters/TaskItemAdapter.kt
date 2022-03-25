@@ -1,17 +1,20 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.tzuzulcode.tasksapp.databinding.TaskItemBinding
+import com.tzuzulcode.tasksapp.models.Task
 
-class TaskItemAdapter(private val clickListener:(id:Long)->Unit): ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(TaskDiffItemCallback()) {
+class TaskItemAdapter(private val clickListener:(id:Long)->Unit): ListAdapter<Task, TaskItemAdapter.TaskItemViewHolder>(
+    TaskDiffItemCallback()
+) {
 
-    override fun onCreateViewHolder(parent:ViewGroup,viewType: Int):TaskItemViewHolder = TaskItemViewHolder.inflateFrom(parent)
+    override fun onCreateViewHolder(parent:ViewGroup,viewType: Int): TaskItemViewHolder =
+        TaskItemViewHolder.inflateFrom(parent)
 
-    override fun onBindViewHolder(holder: TaskItemViewHolder,position:Int){
+    override fun onBindViewHolder(holder: TaskItemViewHolder, position:Int){
         val item = getItem(position)
         holder.bind(item,clickListener)
     }
@@ -21,13 +24,13 @@ class TaskItemAdapter(private val clickListener:(id:Long)->Unit): ListAdapter<Ta
 
     class TaskItemViewHolder(val binding:TaskItemBinding):RecyclerView.ViewHolder(binding.root){
 
-        fun bind(item:Task,clickListener:(id:Long)->Unit){
+        fun bind(item: Task, clickListener:(id:Long)->Unit){
             binding.task = item
             binding.root.setOnClickListener {clickListener(item.id)}
         }
 
         companion object{
-            fun inflateFrom(parent: ViewGroup):TaskItemViewHolder{
+            fun inflateFrom(parent: ViewGroup): TaskItemViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = TaskItemBinding.inflate(layoutInflater,parent,false)
                 return TaskItemViewHolder(binding)

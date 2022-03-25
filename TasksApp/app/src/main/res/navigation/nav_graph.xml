@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/tasksFragment"
-        android:name="com.tzuzulcode.tasksapp.TasksFragment"
+        android:name="com.tzuzulcode.tasksapp.views.TasksFragment"
         android:label="fragment_tasks"
         tools:layout="@layout/fragment_tasks" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/editTaskFragment"
-        android:name="com.tzuzulcode.tasksapp.EditTaskFragment"
+        android:name="com.tzuzulcode.tasksapp.views.EditTaskFragment"
         android:label="fragment_edit_task"
         tools:layout="@layout/fragment_edit_task" >
         <argument

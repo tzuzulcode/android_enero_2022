@@ -1,4 +1,4 @@
-package com.tzuzulcode.tasksapp
+package com.tzuzulcode.tasksapp.views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.tzuzulcode.tasksapp.data.source.local.TaskDatabase
+import com.tzuzulcode.tasksapp.adapters.TaskItemAdapter
 import com.tzuzulcode.tasksapp.databinding.FragmentTasksBinding
+import com.tzuzulcode.tasksapp.viewmodels.TasksViewModel
+import com.tzuzulcode.tasksapp.viewmodels.TasksViewModelFactory
 
 class TasksFragment : Fragment() {
 
