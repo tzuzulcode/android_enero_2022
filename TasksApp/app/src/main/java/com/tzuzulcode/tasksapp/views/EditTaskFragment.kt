@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.tzuzulcode.tasksapp.R
+import com.tzuzulcode.tasksapp.adapters.StepItemAdapter
 import com.tzuzulcode.tasksapp.data.source.local.TaskDatabase
 import com.tzuzulcode.tasksapp.databinding.FragmentEditTaskBinding
 import com.tzuzulcode.tasksapp.viewmodels.EditTaskViewModel
@@ -41,6 +42,14 @@ class EditTaskFragment : Fragment() {
         binding.viewModel = viewModel
 
         binding.lifecycleOwner = viewLifecycleOwner
+
+        val adapter = StepItemAdapter()
+
+        binding.steps.adapter = adapter
+
+        viewModel.task.observe(viewLifecycleOwner, Observer {
+            adapter.submitList(it.steps)
+        })
 
         viewModel.navigateToList.observe(viewLifecycleOwner, Observer { navigate->
             if(navigate){
