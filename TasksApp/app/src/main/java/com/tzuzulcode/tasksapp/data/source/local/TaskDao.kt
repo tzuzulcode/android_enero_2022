@@ -24,6 +24,7 @@ interface TaskDao {
     @Query("SELECT * FROM tasks")
     fun getAll():LiveData<List<Task>>
 
+    @Transaction
     @Query("SELECT * FROM tasks WHERE id= :taskId")
     fun getTaskWithSteps(taskId:Long):LiveData<TaskWithSteps>
 

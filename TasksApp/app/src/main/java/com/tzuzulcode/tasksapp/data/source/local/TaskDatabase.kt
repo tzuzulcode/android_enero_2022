@@ -8,9 +8,10 @@ import com.tzuzulcode.tasksapp.models.Step
 import com.tzuzulcode.tasksapp.models.Task
 import com.tzuzulcode.tasksapp.models.TaskWithSteps
 
-@Database(entities = [Task::class,Step::class], version = 3, exportSchema = false)
+@Database(entities = [Task::class,Step::class], version = 4, exportSchema = false)
 abstract class TaskDatabase: RoomDatabase() {
     abstract val taskDao: TaskDao
+    abstract val stepDao: StepDao
 
     //Similar a definir métodos estáticos
     companion object{

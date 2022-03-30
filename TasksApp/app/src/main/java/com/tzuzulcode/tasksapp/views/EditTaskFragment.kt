@@ -1,6 +1,7 @@
 package com.tzuzulcode.tasksapp.views
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -34,8 +35,9 @@ class EditTaskFragment : Fragment() {
         val application = requireNotNull(this.activity).application
 
         val dao = TaskDatabase.getInstance(application).taskDao
+        val stepDao = TaskDatabase.getInstance(application).stepDao
 
-        val viewModelFactory = EditTaskViewModelFactory(taskId,dao)
+        val viewModelFactory = EditTaskViewModelFactory(taskId,dao,stepDao)
 
         val viewModel = ViewModelProvider(this,viewModelFactory).get(EditTaskViewModel::class.java)
 
@@ -48,6 +50,7 @@ class EditTaskFragment : Fragment() {
         binding.steps.adapter = adapter
 
         viewModel.task.observe(viewLifecycleOwner, Observer {
+            Log.d("Pasos",it.steps.toString())
             adapter.submitList(it.steps)
         })
 
