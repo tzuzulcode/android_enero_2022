@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.tzuzulcode.chat.ui.theme.ChatTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
